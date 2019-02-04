@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Wanchain 0xcert framework example</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+    <h1>Transfer an asset.</h1>
+    <a href="/index.html"><< Back</a>
+    <p>
+      This is a quick demonstation of use. There is input validation, error handleing and no security features. Please input correct data or the demo will fail. For more information check out <a href="https://docs.0xcert.org/">documentation</a>.
+    </p>
+    Example data:<br/>
+    Asset ledger ID(contract address): Go to <a href="./deploy.html">deploy</a> and deploy a new asset ledger then copy contract address from block explorer.<br/>
+    Id: 1<br/>
+    Recipient address: 0xe96D860C8BBB30F6831E6E65d327295B7A0C524f<br/>
+    Token information: <br/>
+    <input id="address" type="text" placeholder="Asset ledger Id" /><br/>
+    <input id="id" type="text" placeholder="Id" /><br/>
+    <input id="recipient" type="text" placeholder="Recipient address" /><br/>
+    <button id="submit">Transfer</button>
+    <p id="console"></p>
+  </body>
+
+  <script>
+    $.ajax({
+      contentType: 'application/json'
+    });
+
+    $(function(){
+      $('#submit').click(function(){
+        $.post(
+          "http://localhost:8080/transfer",
+          {
+            assetLedgerId: $('#address').val(),
+            receiverId: $('#recipient').val(),
+            id: $('#id').val(),
+          },
+          function (response) {
+            $('#console').html('<a href="http://47.104.61.26/block/trans/' + response + '" target="_blank">Check transaction on block explorer</a>. Note that it may take minute for transaction to be shown.');
+          }
+        );
+      });
+    });
+  </script>
+</html>

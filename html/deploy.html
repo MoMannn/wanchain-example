@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Wanchain 0xcert framework example</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+    <h1>Deploy a new asset ledger (erc721 smart contract)</h1>
+    <a href="/index.html"><< Back</a>
+    <p>
+      This is a quick demonstation of use. There is input validation, error handleing and no security features. Please input correct data or the demo will fail. For more information check out <a href="https://docs.0xcert.org/">documentation</a>.
+    </p>
+    Example data:<br/>
+    Name: Test<br/>
+    Symbol: TST<br/>
+    Base URI: http://test.com/<br/>
+    Schema ID: 0x0000000000000000000000000000000000000000000000000000000000000000<br/><br/>
+    Ledger information: <br/>
+    <input id="name" type="text" placeholder="Name" /><br/>
+    <input id="symbol" type="text" placeholder="Symbol" /><br/>
+    <input id="baseUri" type="text" placeholder="Base uri (http://example.com/)" /><br/>
+    <input id="schemaId" type="text" placeholder="Schema Id" /><br/><br/>
+    Ledger options: <br/>
+    <input type="checkbox" value="1" />Asset owner can destory the asset<br/>
+    <input type="checkbox" value="2" />Asset ledger owner can update assets<br/>
+    <input type="checkbox" value="3" />Asset ledger owner can stop/start all asset transfers<br/>
+    <input type="checkbox" value="4" />Asset ledger owner can revoke(destory) any asset<br/><br/>
+    <button id="submit">Deploy</button>
+    <p id="console"></p>
+  </body>
+
+  <script>
+    $.ajax({
+      contentType: 'application/json'
+    });
+
+    $(function(){
+      $('#submit').click(function(){
+        const capabilities = [];
+        $("input:checkbox:checked").each(function(){
+          capabilities.push($(this).val());
+        });
+
+        $.post(
+          "http://localhost:8080/deploy",
+          {
+            name: $('#name').val(),
+            symbol: $('#symbol').val(),
+            uriBase: $('#baseUri').val(),
+            schemaId: $('#schemaId').val(),
+            capabilities: capabilities
+          },
+          function (response) {
+            $('#console').html('<a href="http://47.104.61.26/block/trans/' + response + '" target="_blank">Check transaction on block explorer</a>. Note that it may take minute for transaction to be shown. Copy the contract address from the block explorer so you can use it when creating new assets.');
+          }
+        );
+      });
+    });
+  </script>
+</html>

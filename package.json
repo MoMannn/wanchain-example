@@ -1,0 +1,25 @@
+{
+  "name": "wan-example",
+  "version": "0.0.1",
+  "description": "Example of 0xcert framework usage with wanchain. ",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@0xcert/ethereum-asset-ledger": "^1.0.0-rc3",
+    "@0xcert/ethereum-http-provider": "^1.0.0-rc3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "@types/node": "^10.12.21",
+    "typescript": "^3.3.1"
+  }
+}
