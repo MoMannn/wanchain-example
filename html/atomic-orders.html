@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Wanchain 0xcert framework example</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+    <h1>Create an atomic order.</h1>
+    <a href="./index.html"><< Back</a>
+    <p>
+      This is a quick demonstation of use. There is input validation, error handling and no security features. Please input correct data or the demo will fail. For more information check out <a href="https://docs.0xcert.org/">documentation</a>.
+    </p>
+    <button id="atomicOrder">Atomic order</button>
+    <p id="console"></p>
+  </body>
+
+  <script>
+    $.ajax({
+      contentType: 'application/json'
+    });
+
+    $(function(){
+      $('#atomicOrder').click(function(){
+        $.post(
+          "http://localhost:8080/atomic-order",
+          {
+          },
+          function (response) {
+            $('#console').html('<a href="http://testnet.wanscan.org/tx/' + response + '" target="_blank">Check transaction on block explorer</a>. Note that it may take minute for transaction to be shown.');
+          }
+        );
+      });
+    });
+  </script>
+</html>

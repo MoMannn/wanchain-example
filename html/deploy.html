@@ -9,7 +9,7 @@
 
   <body>
     <h1>Deploy a new asset ledger (erc721 smart contract)</h1>
-    <a href="/index.html"><< Back</a>
+    <a href="./index.html"><< Back</a>
     <p>
       This is a quick demonstation of use. There is input validation, error handleing and no security features. Please input correct data or the demo will fail. For more information check out <a href="https://docs.0xcert.org/">documentation</a>.
     </p>
@@ -54,7 +54,7 @@
             capabilities: capabilities
           },
           function (response) {
-            $('#console').html('<a href="http://47.104.61.26/block/trans/' + response + '" target="_blank">Check transaction on block explorer</a>. Note that it may take minute for transaction to be shown. Copy the contract address from the block explorer so you can use it when creating new assets.');
+            $('#console').html('<a href="http://testnet.wanscan.org/tx/' + response + '" target="_blank">Check transaction on block explorer</a>. Note that it may take minute for transaction to be shown. Copy the contract address from the block explorer so you can use it when creating new assets.');
           }
         );
       });

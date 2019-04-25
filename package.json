@@ -12,8 +12,10 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@0xcert/ethereum-asset-ledger": "^1.0.0-rc3",
-    "@0xcert/ethereum-http-provider": "^1.0.0-rc3",
+    "@0xcert/wanchain-asset-ledger": "1.4.0",
+    "@0xcert/wanchain-http-provider": "1.4.0",
+    "@0xcert/wanchain-order-gateway": "1.4.0",
+    "@0xcert/wanchain-value-ledger": "1.4.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4"
   },
