@@ -2,7 +2,6 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import { HttpProvider } from '@0xcert/wanchain-http-provider';
 import { AssetLedger, GeneralAssetLedgerAbility } from '@0xcert/wanchain-asset-ledger';
-import { ValueLedger } from '@0xcert/wanchain-value-ledger';
 import { OrderGateway, OrderActionKind, Order } from '@0xcert/wanchain-order-gateway';
 
 const app = express();
@@ -18,6 +17,7 @@ const provider = new HttpProvider({
     requiredConfirmations: 1
 });
 
+// Create new asset ledger
 app.post('/deploy', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -32,6 +32,7 @@ app.post('/deploy', async (req, res) => {
     res.send(mutation.id);
 });
 
+// Create new asset
 app.post('/mint', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -45,6 +46,7 @@ app.post('/mint', async (req, res) => {
     res.send(mutation.id);
 });
 
+// Transfer asset
 app.post('/transfer', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -57,6 +59,8 @@ app.post('/transfer', async (req, res) => {
     res.send(mutation.id);
 });
 
+// Create an atomic order
+// Replace makerId, takerId and ledgerId with your addresses.
 app.post('/atomic-order', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -64,7 +68,7 @@ app.post('/atomic-order', async (req, res) => {
     const ledgerId = '0x3C4d5bBBc050e3bc57f19b928d6D1B2180e856D0'; // replace with your deployed asset ledger.
     const makerId = '0xe96d860c8bbb30f6831e6e65d327295b7a0c524f'; // replace with your maker account.
     const takerId = '0x37f5fd03088748cfe5e64614ce8f920221da8a41'; // replace with your taker account.
-    const orderGatewayId = '0xcbd15dfc9fb38e3283f5c122cf94ea0767b45714';
+    const orderGatewayId = '0x1d3fd1eA89510Ab49FFFE160Ee166dd08d0d079C'; // testnet order gateway
 
     const provider2 = new HttpProvider({
         url: 'http://127.0.0.1:8545',
@@ -115,6 +119,7 @@ app.post('/atomic-order', async (req, res) => {
     res.send(mutation.id);
 });
 
+// Get asset ledger information
 app.get('/ledgerInfo', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -124,6 +129,7 @@ app.get('/ledgerInfo', async (req, res) => {
     res.send(info);
 });
 
+// Get asset information
 app.get('/assetInfo', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -133,6 +139,7 @@ app.get('/assetInfo', async (req, res) => {
     res.send(info);
 });
 
+// Get asset owner address
 app.get('/assetOwner', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -142,6 +149,7 @@ app.get('/assetOwner', async (req, res) => {
     res.send(account);
 });
 
+// Get number of assets an address owns
 app.get('/balance', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
