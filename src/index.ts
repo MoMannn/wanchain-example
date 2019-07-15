@@ -65,10 +65,10 @@ app.post('/atomic-order', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     
-    const ledgerId = '0x3C4d5bBBc050e3bc57f19b928d6D1B2180e856D0'; // replace with your deployed asset ledger.
-    const makerId = '0xe96d860c8bbb30f6831e6e65d327295b7a0c524f'; // replace with your maker account.
+    const ledgerId = '0x43Eed039351019D4B318BdFa97d0D6747Da49Aa8'; // replace with your deployed asset ledger.
+    const makerId = '0xe96D860C8BBB30F6831E6E65d327295B7A0C524f'; // replace with your maker account.
     const takerId = '0x37f5fd03088748cfe5e64614ce8f920221da8a41'; // replace with your taker account.
-    const orderGatewayId = '0x1d3fd1eA89510Ab49FFFE160Ee166dd08d0d079C'; // testnet order gateway
+    const orderGatewayId = '0x90A8D7e2138ABB28393906Ae162238B5A18fE846'; // testnet order gateway
 
     const provider2 = new HttpProvider({
         url: 'http://127.0.0.1:8545',
