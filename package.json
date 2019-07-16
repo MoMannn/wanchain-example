@@ -1,7 +1,7 @@
 {
   "name": "wan-example",
   "version": "0.0.1",
-  "description": "Example of 0xcert framework usage with wanchain. ",
+  "description": "Example of the 0xcert Framework usage with Wanchain network. ",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
