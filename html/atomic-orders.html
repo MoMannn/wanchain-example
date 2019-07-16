@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Wanchain 0xcert framework example</title>
+    <title>Wanchain 0xcert Framework example</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
 
   </head>
@@ -11,7 +11,7 @@
     <h1>Create an atomic order.</h1>
     <a href="./index.html"><< Back</a>
     <p>
-      This is a quick demonstation of use. Because of how dynamic atomic operations are by nature we hardcoded all the data in the API. Please go and change the fields with you own data. This API call will also perform multiple transaction to the blockchain so it may take a while before you get a response. For more information check out <a href="https://docs.0xcert.org/">documentation</a>.
+      This is a quick demonstation of use. Because of the nature of dynamic atomic operations, we hardcoded all the data within the API. Please go and update the fields with you own data. This API call will also perform multiple transactions onto the blockchain, so it may take a while before you get a response. For more information check out the Framework <a href="https://docs.0xcert.org/">documentation</a>.
     </p>
     <button id="atomicOrder">Atomic order</button>
     <p id="console"></p>
@@ -29,7 +29,7 @@
           {
           },
           function (response) {
-            $('#console').html('<a href="http://testnet.wanscan.org/tx/' + response + '" target="_blank">Check transaction on block explorer</a>. Note that it may take minute for transaction to be shown.');
+            $('#console').html('<a href="http://testnet.wanscan.org/tx/' + response + '" target="_blank">Check transaction on the Wanchain block explorer</a>. Note that it may take a while for transaction to be shown.');
           }
         );
       });

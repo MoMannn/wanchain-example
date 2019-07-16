@@ -11,16 +11,16 @@
     <h1>Create a new asset.</h1>
     <a href="./index.html"><< Back</a>
     <p>
-      This is a quick demonstation of use. There is no input validation, error handleing and no security features. Please input correct data or the demo will fail. For more information check out <a href="https://docs.0xcert.org/">documentation</a>.
+      This is a quick demonstation of use. There is no input validation, error handling and no security features. Please input correct data or the demo will fail. For more information check out the Framework <a href="https://docs.0xcert.org/">documentation</a>.
     </p>
     Example data:<br/>
-    Asset ledger ID(contract address): Go to <a href="./deploy.html">deploy</a> and deploy a new asset ledger then copy contract address from block explorer.<br/>
-    Id: 1<br/>
+    Asset ledger ID (contract address): Go to <a href="./deploy.html">deploy page</a> and deploy a new asset ledger, then copy the contract address from block explorer.<br/>
+    ID: 1<br/>
     Recipient address: 0xe96D860C8BBB30F6831E6E65d327295B7A0C524f<br/>
     Imprint: 973124ffc4a03e66d6a4458e587d5d6146f71fc57f359c8d516e0b12a50ab0d9<br/><br/>
     Token information: <br/>
-    <input id="address" type="text" placeholder="Asset ledger Id" /><br/>
-    <input id="id" type="text" placeholder="Id" /><br/>
+    <input id="address" type="text" placeholder="Asset ledger ID" /><br/>
+    <input id="id" type="text" placeholder="ID" /><br/>
     <input id="recipient" type="text" placeholder="Recipient address" /><br/>
     <input id="imprint" type="text" placeholder="Imprint" /><br/>
     <button id="submit">Create</button>
@@ -43,7 +43,7 @@
             imprint: $('#imprint').val()
           },
           function (response) {
-            $('#console').html('<a href="http://testnet.wanscan.org/tx/' + response + '" target="_blank">Check transaction on block explorer</a>. Note that it may take minute for transaction to be shown.');
+            $('#console').html('<a href="http://testnet.wanscan.org/tx/' + response + '" target="_blank">Check transaction on the Wanchain block explorer</a>. Note that it may take a while for transaction to be shown.');
           }
         );
       });

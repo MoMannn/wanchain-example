@@ -2,16 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Wanchain 0xcert framework example</title>
+    <title>Wanchain 0xcert Framework example</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
 
   </head>
 
   <body>
-    <h1>Deploy a new asset ledger (erc721 smart contract)</h1>
+    <h1>Deploy a new asset ledger (ERC-721 smart contract)</h1>
     <a href="./index.html"><< Back</a>
     <p>
-      This is a quick demonstation of use. There is no input validation, error handleing and no security features. Please input correct data or the demo will fail. For more information check out <a href="https://docs.0xcert.org/">documentation</a>.
+      This is a quick demonstation of use. There is no input validation, error handling and no security features. Please input correct data or the demo will fail. For more information check out the Framework <a href="https://docs.0xcert.org/">documentation</a>.
     </p>
     Example data:<br/>
     Name: Test<br/>
@@ -21,13 +21,13 @@
     Ledger information: <br/>
     <input id="name" type="text" placeholder="Name" /><br/>
     <input id="symbol" type="text" placeholder="Symbol" /><br/>
-    <input id="baseUri" type="text" placeholder="Base uri (http://example.com/)" /><br/>
-    <input id="schemaId" type="text" placeholder="Schema Id" /><br/><br/>
+    <input id="baseUri" type="text" placeholder="Base URI (http://example.com/)" /><br/>
+    <input id="schemaId" type="text" placeholder="Schema ID" /><br/><br/>
     Ledger options: <br/>
-    <input type="checkbox" value="1" />Asset owner can destory the asset<br/>
+    <input type="checkbox" value="1" />Asset owner can destroy the asset<br/>
     <input type="checkbox" value="2" />Asset ledger owner can update assets<br/>
     <input type="checkbox" value="3" />Asset ledger owner can stop/start all asset transfers<br/>
-    <input type="checkbox" value="4" />Asset ledger owner can revoke(destory) any asset<br/><br/>
+    <input type="checkbox" value="4" />Asset ledger owner can revoke (destroy) any asset<br/><br/>
     <button id="submit">Deploy</button>
     <p id="console"></p>
   </body>
