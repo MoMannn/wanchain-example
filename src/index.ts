@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 const port = 8080;
 const provider = new HttpProvider({
     url: 'http://127.0.0.1:8545',
-    accountId: '0xe96D860C8BBB30F6831E6E65d327295B7A0C524f', // replace with your account.
+    accountId: '0xe96D860C8BBB30F6831E6E65d327295B7A0C524f', // replace with your account
     requiredConfirmations: 1
 });
 
@@ -60,14 +60,14 @@ app.post('/transfer', async (req, res) => {
 });
 
 // Create an atomic order
-// Replace makerId, takerId and ledgerId with your addresses.
+// Replace makerId, takerId and ledgerId with your addresses
 app.post('/atomic-order', async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     
-    const ledgerId = '0x43Eed039351019D4B318BdFa97d0D6747Da49Aa8'; // replace with your deployed asset ledger.
-    const makerId = '0xe96D860C8BBB30F6831E6E65d327295B7A0C524f'; // replace with your maker account.
-    const takerId = '0x37f5fd03088748cfe5e64614ce8f920221da8a41'; // replace with your taker account.
+    const ledgerId = '0x43Eed039351019D4B318BdFa97d0D6747Da49Aa8'; // replace with your deployed asset ledger
+    const makerId = '0xe96D860C8BBB30F6831E6E65d327295B7A0C524f'; // replace with your Maker account
+    const takerId = '0x37f5fd03088748cfe5e64614ce8f920221da8a41'; // replace with your Taker account
     const orderGatewayId = '0x90A8D7e2138ABB28393906Ae162238B5A18fE846'; // testnet order gateway
 
     const provider2 = new HttpProvider({
