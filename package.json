@@ -16,7 +16,7 @@
     "@0xcert/wanchain-http-provider": "1.7.4",
     "@0xcert/wanchain-order-gateway": "1.7.4",
     "body-parser": "^1.18.3",
-    "express": "^4.16.4"
+    "express": "^4.17.3"
   },
   "devDependencies": {
     "@types/express": "^4.16.1",
